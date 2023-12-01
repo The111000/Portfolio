@@ -1,0 +1,1623 @@
+@font-face{
+    font-family: "Acorn";
+    src: url(./fonts/acorn.woff);
+}
+
+@font-face {
+    font-family: "gt";
+    src: url(./fonts/gt.woff);
+}
+:root{
+    --vercel-sepia: #FFE3B1;
+    --vercel-sepia-dark: #3e3526;
+    --vercel-bg: var(--vercel-sepia);
+    --vercel-bg-dark: var(--vercel-sepia-dark);
+    --color-light: #025a4e;
+    --color-dark: #5cbb9b;
+    --color-light-1: #4bb390;
+    --tshirt: var(--color-light);
+    --color-bg: #ede7de;
+    --bg: var(--color-bg);
+    --foreground: var(--color-light);
+    --background: var(--color-dark);
+    --color-candy-light: #FDB9D4;
+    --color-candy-dark: #760a35;
+    --candy-fg: var(--color-candy-light);
+    --candy-bg: var(--color-candy-dark);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--foreground);
+    background: #EDE7DE;
+    /* background: rgb(255,187,187); */
+    /* background: linear-gradient(120deg, #ffbbbb 0%, #eef6bc 18%, #c8f4ba 35%, #bcf6db 50%, #bbecff 65%, #dcbcf6 83%, #f4bae8 100%); */
+    background-size: 400% 400%;
+    transition: background 1s ease-in-out;
+    /* animation: gradient 10s ease infinite; */
+}
+
+
+.darkmode{
+    --vercel-sepia: #FFE3B1;
+    --vercel-sepia-dark: #3e3526;
+    --vercel-bg: var(--vercel-sepia-dark);
+    --vercel-bg-dark: var(--vercel-sepia);
+    --color-light: rgb(2, 90, 78);
+    --color-dark: #8fdcc2;
+    --color-light-1: #233830;
+    --foreground: var(--color-dark);
+    --background: var(--color-light);
+    --bg: var(--color-light-1);
+    --tshirt: var(--foreground);
+    --color-candy-light: #FDB9D4;
+    --color-candy-dark: #760a35;
+    /* --color-candy-dark: rgb(138, 22, 69); */
+    --candy-fg: var(--color-candy-dark);
+    --candy-bg: var(--color-candy-light);
+    background: #233830;
+    transition: background 1s ease-in-out;
+    /* animation: gradient 10s ease infinite; */
+}
+
+.bg{
+    fill: var(--bg);
+    transition: all 1s ease-in-out;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.navbar-container{ 
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    justify-content: center;
+    /* background: rgb(255, 255, 255, 0.9); */
+    /* position: fixed; */
+}
+
+.nav-links{
+    padding: 0 25%;
+}
+
+.toggle-container{
+    position: absolute;
+    position: fixed;
+    right: 5%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+}
+
+.theme-switch{
+    height: 2em;
+    transition: all 1s;
+    transform: rotate(180deg);
+    fill: var(--foreground);
+}
+
+#dark-mode-toggle{
+    transition: 1s;
+}
+
+#dark-mode-toggle.rotate{
+    transform: rotate(180deg);  
+    transition: transform 1s;
+}
+
+.active{
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    transition: all 0.5s;
+    color: var(--foreground);
+}
+
+.active:focus{
+    transition: all 0.5s;
+    background-color: #8fdcc2;
+    border-radius: 20px;
+    padding: 0 10%;
+    color: #024a4e;
+}
+
+.header-container{
+    margin-top: 12%;
+    margin-left: 3%;
+}
+
+.name{  
+    justify-content: left;
+    display: flex;
+    font-size: 6em;
+    font-family: Acorn, 'Kaushan Script';
+    font-weight: bolder;
+}
+
+.brief-container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: left;
+    margin-left: 8%;
+}
+
+.brief{
+    width: 50%;
+}
+
+
+.short-para-about-me{
+    font-size: 1.1em;
+    font-family: 'Poppins';
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.name:nth-of-type(2){
+    margin-left: 5%;
+}
+
+.star-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 2%;
+}
+
+.star{
+    position: relative;
+    fill: white;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    left: 5%;
+    transition: all 0.5s ease-out;
+    animation: bouncy-star-1 10s infinite;
+}
+
+.star-2{
+    position: relative;
+    fill:white;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    transition: all 0.5s ease-out;
+    animation: bouncy-star-2 10s infinite;
+}
+
+.t-shirt{
+    
+    fill: var(--tshirt);
+    transition: all 1s;
+}
+
+.customsvg{
+    /* fill: var(--foreground); */
+    transition: all 1s;
+}
+
+.social-icons-container{
+    margin-top: 3%;
+    margin-left: 8%;
+    display: flex;
+    justify-content: left;
+}
+
+.social-icons-sub-container{
+    display: flex;
+    justify-content: center;
+    margin-right: 4%;
+}
+
+.social-icons{
+    height: 2em;
+    fill: var(--foreground);
+    transition: all 0.1s ease-out;
+}
+
+.social-icons:hover{
+    transition: all 0.1s ease-in;
+    transform: translateY(-5px);
+    height: 2.3em;
+}
+
+.letters{
+    transition: all 1s ease-out;
+    /* font-family: 'Anton', sans-serif; */
+    user-select: none;
+}
+
+.letters:hover{
+    transition: all 0.1s ease-in;
+    rotate: -5deg;
+    transform: translateY(-10px);
+}
+
+.dev-container{
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    left: 60%;
+    top: 30%;
+}
+
+.developer{
+    border: 0;
+    display: flex;
+    justify-content: right;
+}
+
+#main-section-2{
+    margin-top: 15%;
+}
+
+.relaxing-man-color{
+    fill: var(--foreground);
+    transition: fill 1s;
+}
+
+.header-section-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:first center;
+}
+
+.content-section-2-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: var(--candy-fg);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin: 15% 5% 0 5%;
+    padding: 3% 3%;
+    border: 10px solid #c2ebf9;
+    transition: all 0.5s;
+    transition: background 1s ease-in-out;
+}
+
+.moc-container{
+    max-width: 40%;
+    display: flex;
+    transition: all 1s;
+}
+
+.moc{
+    max-width: 100%;
+    border-radius: 50px;
+    transition: all 0.5s;
+    border: 10px solid #c2ebf9;
+    padding: 1%;
+    animation: hue-rotation 6s ease infinite;
+}
+
+.h2-container{
+    width: 50%;
+    margin: auto 0;
+    text-align: center;
+    /* margin-top: 10%; */
+}
+
+.name-2{
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    font-family: Acorn, 'Kaushan Script';
+    font-weight: bolder;
+    color: var(--foreground);
+    transition: color 1s;
+}
+
+.lolli-container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.lolli-img{
+    width: 20%;
+}
+
+.about-moc{
+    display: flex;
+    justify-content: center;
+    padding: 5% 20%;
+    font-size: 1.1em;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color:var(--foreground);
+    line-height: 1.5;
+    transition: color 1s;
+    z-index: 1;
+}
+
+.content-section-2b-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* background: #84d6cb; */
+    background: var(--vercel-bg);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin: 15% 5% 0 5%;
+    padding: 3% 3%;
+    border: 10px solid #B29F7C;
+    transition: all 0.5s;
+    transition: background 1s ease-in-out, border 1s ease-in-out;
+}
+
+.vercel-container{
+    max-width: 40%;
+    display: flex;
+    transition: all 1s;
+    border: 10px solid #B29F7C;
+    border-radius: 50px;
+}
+
+.vercel{
+    filter: sepia(1);
+    max-width: 100%;
+    border-radius: 50px;
+    transition: all 0.5s;
+    padding: 1%;
+    transition: border 1s ease-in-out;
+}
+
+.header-skills-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.skills-container{
+    display: flex;
+    justify-content: center;
+    background-image: url("/svgs/bottom-1.svg");
+    background-position-y: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.skills-sub-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1%;
+    padding: 5%;
+    width: 80%;
+    border-radius: 30px;
+    /* background-image: url(/svgs/layered-waves-haikei.svg); */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /* border: 5px solid #5CBB9B; */
+}
+
+.front-end-container{
+    width: 40%;
+}
+
+.programming-container{
+    width: 40%;
+}
+
+.code-svg-container{
+    display: flex;
+    justify-content: center;
+}
+
+.code-svg{
+    height: 1.5em;
+    fill: var(--foreground);
+}
+
+.browser-svg-container{
+    display: flex;
+    justify-content: center;
+}
+
+.browser-svg{
+    height: 1.5em;
+    fill: var(--foreground);
+}
+
+.exp{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--background);
+    padding: 5%;
+    border-radius: 5px;
+}
+
+.designer-container{
+    margin-top: 15%;
+}
+
+.program-container{
+    margin-top: 15%;
+}
+
+.about-designer{
+    margin-top: 15%;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.about-programming{
+    padding: 0 1%;
+    margin-top: 15%;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.designing-things-container{
+    font-weight: 500;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Poppins';
+    /* color:#760a35; */
+    color: var(--candy-bg);
+}
+
+.designing-things{
+    font-weight: 500;
+    margin-top: 3%;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.programming-container .designing-things:nth-of-type(1){
+    color: #025a4e;
+}
+
+#footer{
+    /* background-image: url("/svgs/layered-waves-haikei-top-new.svg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-container{
+    background-image: url("/svgs/bottom-1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-sub-container{
+    background-image:url("/svgs/top-1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10%;
+    margin: auto 0;
+    padding: 10%;
+}
+
+.s{
+    height: 4em;
+    fill: var(--foreground);
+}
+
+.s-container{
+    width: max-content;
+    margin: auto;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content{
+    padding: 1%;
+    margin: 0 auto;
+    width: max-content;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Acorn;
+}
+
+.name-2b{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Acorn, 'Kaushan Script';
+    font-weight: bolder;
+    color:var(--foreground);
+}
+
+@keyframes rotating{
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradient{
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes bouncy-star-1{
+    0% {
+    }
+
+    50%{
+        rotate: -180deg;
+        
+    }
+    
+    100%{
+        rotate: -360deg;
+    }
+}
+
+@keyframes bouncy-star-2{
+    50%{
+        rotate: 180deg;
+    }
+
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes hue-rotation {
+
+    0%{
+        filter: hue-rotate(0deg);
+    }
+
+    50%{
+        filter: hue-rotate(180deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media (min-width: 0px) and (max-width: 480px){
+    
+    
+    .developer{
+        display: none;
+    }
+    
+    .active{
+        font-size: 0.6em;
+    }
+    
+    .header-container{
+        margin-left: 0;
+        margin-top: 45%;
+        text-align: center;
+    }
+    
+    .brief-container{
+        justify-content: center;
+        margin-top: 20%;
+        margin-left: 0;
+    }
+    
+    .social-icons-container{
+        margin-top: 20%;
+    }
+    
+    .brief{
+        width: 60%;
+        text-align: center;
+    }
+
+    .name{
+        justify-content: center;
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
+    }    
+
+    .short-para-about-me{
+        font-size: 0.65em;
+    }
+
+    .theme-switch{
+        height: 1.25em;
+    }
+
+    .social-icons-container{
+        margin-left: 0;
+        margin-top: 15%;
+        justify-content: center;
+    }
+
+    .social-icons{
+        height: 1.25em;
+    }
+    
+    .navbar{
+        margin-top: 4%;
+    }
+
+    .social-icons-sub-container{
+        margin-right: 8%;
+    }
+
+    .social-icons-sub-container:nth-of-type(4){
+        margin-right: 0;
+    }
+
+    .social-icons:hover{
+        transition: all 0.1s ease-in;
+        transform: translateY(-5px);
+        height: 2em;
+    }
+    
+    .star-container{
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 2%;
+    }
+    
+    .star{
+        position: relative;
+    }
+
+    .header-section-2{
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-section-2-container{
+        justify-content: center;
+        background: var(--candy-fg);
+        margin: 20% 5% 0 5%;
+        padding: 3% 3%;
+    }
+
+    .moc-container{
+        max-width: 100%;
+    }
+
+    .moc{
+        min-width: 100%;
+        border-radius: 50px;
+        transition: all 0.5s;
+        border: 10px solid #c2ebf9;
+        padding: 1%;
+        animation: hue-rotation 6s ease infinite;
+    }
+    
+    .h2-container{
+        width: 50%;
+        margin: auto 0;
+        text-align: center;
+        /* margin-top: 10%; */
+    }
+    
+    .name-2{
+        display: flex;
+        margin-top: 15%;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    
+    .lolli-container{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lolli-img{
+        width: 40%;
+    }
+    
+    .about-moc{
+        display: flex;
+        justify-content: center;
+        padding: 5% 0%;
+        font-size: 0.8em;
+        font-family: 'Poppins';
+        font-weight: 500;
+        color:var(--foreground);
+        line-height: 1.5;
+    }
+
+    .content-section-2b-container{
+        justify-content: center;
+        background: var(--vercel-bg);
+        margin: 20% 5% 0 5%;
+        padding: 3% 3%;
+    }
+    
+    .vercel-container{
+        max-width: 100%;
+    }
+    
+    .vercel{
+        max-width: 100%;
+        padding: 1%;
+    }
+
+    .skills-sub-container{
+        width: 100%;
+    }
+
+    .front-end-container{
+        width: 50%;
+    }
+
+
+
+    .programming-container{
+        width: 50%;
+    }
+
+    .code-svg{
+        height: 0.65em;
+    }
+    .browser-svg{
+        height: 0.65em;
+    }
+    .designing-things-container{
+        font-size: 0.65em;
+    }
+    .designing-things{
+        font-size: 0.65em;
+        padding: 0 10%;
+    }
+
+    .name-2b{
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    .about-designer{
+        font-size: 0.65em;
+    }
+
+    .about-programming{
+        font-size: 0.65em;
+    }
+
+    .s{
+        height: 2em;
+    }
+
+    .footer-content{
+        font-size: 1em;
+    }
+}
+
+@media(min-width: 480px) and (max-width: 600px){
+
+    .developer{
+        display: none;
+    }
+
+    .active{
+        font-size: 0.75em;
+    }
+
+    .header-container{
+        margin-top: 35%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .brief-container{
+        justify-content: center;
+        margin-top: 15%;
+        margin-left: 0;
+    }
+
+    .social-icons-container{
+        margin-top: 15%;
+    }
+
+    .brief{
+        width: 50%;
+        text-align: center;
+    }
+
+    .name{
+        justify-content: center;
+        font-size: 2.9rem;
+        text-align: center;
+        padding: 0;
+    }    
+
+    .name:nth-of-type(2){
+        margin-left: 5%;
+    }
+
+    .short-para-about-me{
+        font-size: 0.8em;
+        line-height: 1.75;
+    }
+
+    .theme-switch{
+        height: 1.25em;
+    }
+
+    .social-icons-container{
+        margin-left: 0;
+        margin-top: 15%;
+        justify-content: center;
+    }
+
+    .social-icons{
+        height: 1.25em;
+    }
+
+    .navbar{
+        margin-top: 4%;
+    }
+
+    .social-icons-sub-container{
+        margin-right: 8%;
+    }
+
+    .social-icons-sub-container:nth-of-type(4){
+        margin-right: 0;
+    }
+
+    .social-icons:hover{
+        height: 1.5em;
+    }
+
+    .star-container{
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 2%;
+    }
+
+    .star{
+        position: relative;
+    }
+
+    .header-section-2{
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-section-2-container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background: var(--candy-fg);
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+    }
+    
+    .img-container{
+        display: flex;
+    }
+    
+    .moc-container{
+        max-width: 90%;
+        display: flex;
+    }
+
+    .moc{
+        margin-top: 2%;
+        max-width: 100%;
+    }
+    
+    .h2-container{
+        min-width: 70%;
+        margin: auto 0;
+        text-align: center;
+        /* margin-top: 10%; */
+    }
+    
+    .name-2{
+        display: flex;
+        margin-top: 30%;
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    
+    .lolli-container{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lolli-img{
+        width: 40%;
+    }
+    
+    .about-moc{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        padding: 5% 0%;
+        font-size: 0.8em;
+        font-family: 'Poppins';
+        font-weight: 500;
+        color:var(--foreground);
+        line-height: 1.5;
+    }
+
+    .content-section-2b-container{
+        justify-content: center;
+        background: var(--vercel-bg);
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+    }
+    
+    .vercel-container{
+        max-width: 90%;
+    }
+    
+    .vercel{
+        margin-top: 2%;
+        max-width: 100%;
+        padding: 1%;
+    }
+
+    .front-end-container{
+        width: 50%;
+    }
+
+
+
+    .programming-container{
+        width: 50%;
+    }
+
+    .code-svg{
+        height: 0.65em;
+    }
+    .browser-svg{
+        height: 0.65em;
+    }
+    .designing-things-container{
+        font-size: 0.65em;
+    }
+    .designing-things{
+        font-size: 0.65em;
+        padding: 0 10%;
+    }
+
+    .name-2b{
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    .about-designer{
+        font-size: 0.65em;
+    }
+
+    .about-programming{
+        font-size: 0.65em;
+        padding:0 10%;
+    }
+
+    .s{
+        height: 2em;
+    }
+
+    .footer-content{
+        font-size: 1em;
+    }
+}
+
+@media(min-width: 600px) and (max-width: 800px){
+
+    .developer{
+        display: none;
+    }
+
+    .header-container{
+        margin-left: 0;
+        margin-top: 30%;
+    }
+
+    .brief-container{
+        margin-top: 10%;
+        justify-content: center;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .brief{
+        width: 60%;
+    }
+
+    .name{
+        font-size: 4em;
+        justify-content: center;
+    }
+
+    .name:nth-of-type(2){
+        display: flex;
+        margin-left: 7%;
+    }
+
+    .short-para-about-me{
+        font-size: 0.9em;
+    }
+
+    .social-icons-container{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .active{
+        font-size: 0.8em;
+    }
+
+    .navbar{
+        margin-top: 4%
+    }
+
+    .social-icons-sub-container{
+        margin-right: 6%;
+    }
+
+    .social-icons-sub-container:nth-of-type(4){
+        margin-right: 0;
+    }
+
+    .social-icons{
+        height: 1.5em;
+    }
+
+    .social-icons:hover{
+        height: 1.8em;
+    }
+
+    .theme-switch{
+        height: 1.5em;
+    }
+
+    .header-section-2{
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-section-2-container{
+        justify-content: center;
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+    }
+    
+    .img-container{
+        display: flex;
+    }
+    
+    .moc-container{
+        display: flex;
+        max-width: 80%;
+    }
+
+    .moc{
+        margin-top: 5%;
+        max-width: 100%;
+        padding: 1%;
+    }
+    
+    .h2-container{
+        width: 70%;
+        margin: auto 0;
+        text-align: center;
+        /* margin-top: 10%; */
+    }
+    
+    .name-2{
+        display: flex;
+        margin-top: 30%;
+        width: 100%;
+        text-align: center;
+        font-size: 3.5em;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    
+    .lolli-container{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lolli-img{
+        width: 40%;
+    }
+    
+    .about-moc{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        padding: 5% 0%;
+        font-size: 1em;
+        font-family: 'Poppins';
+        font-weight: 500;
+        color:var(--foreground);
+        line-height: 1.5;
+    }
+
+    .content-section-2b-container{
+        justify-content: center;
+        background: var(--vercel-bg);
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+    }
+    
+    .vercel-container{
+        max-width: 80%;
+    }
+    
+    .vercel{
+        margin-top: 2%;
+        max-width: 100%;
+        padding: 1%;
+    }
+
+    .front-end-container{
+        width: 50%;
+    }
+
+
+
+    .programming-container{
+        width: 50%;
+    }
+
+    .code-svg{
+        height: 0.65em;
+    }
+    .browser-svg{
+        height: 0.65em;
+    }
+    .designing-things-container{
+        font-size: 0.65em;
+    }
+    .designing-things{
+        font-size: 0.65em;
+    }
+
+    .name-2b{
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    .about-designer{
+        font-size: 0.65em;
+    }
+
+    .about-programming{
+        font-size: 0.65em;
+    }
+
+    .s{
+        height: 2em;
+    }
+
+    .footer-content{
+        font-size: 1em;
+    }
+}
+
+@media(min-width: 800px) and (max-width: 968px){
+
+    .developer{
+        display: none;
+    }
+
+    .name{
+        justify-content: center;
+        font-size: 5em;
+    }
+
+    .name:nth-of-type(2){
+        margin-left: 5%;
+    }
+
+    .header-container{
+        margin-left: 0;
+        margin-top: 22%;
+    }
+
+    .short-para-about-me{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .brief-container{
+        justify-content: center;
+        margin-top: 6%;
+        margin-left: 0;
+    }
+
+    .brief{
+        width: 60%;
+    }
+
+    .social-icons-container{
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 7%;
+    }
+
+    .social-icons-sub-container{
+        margin-right: 8%;
+    }
+
+    .social-icons-sub-container:nth-of-type(4){
+        margin-right: 0;
+    }
+
+    .social-icons{
+        height: 1.75em;
+    }
+
+    .active{
+        font-size: 1em;
+    }
+
+    .theme-switch{
+        height: 1.75em;
+    }
+
+    .navbar{
+        margin-top: 3%;
+    }
+
+    .header-section-2{
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-section-2-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background: var(--candy-fg);
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius:50px;
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+        border: 10px solid #c2ebf9;
+        transition: all 0.5s;
+    }
+    
+    .img-container{
+        display: flex;
+    }
+    
+    .moc-container{
+        max-width: 50%;
+    }
+
+    .moc{
+        /* margin-top: 5%; */
+        max-width: 100%;
+    }
+    
+    .h2-container{
+        width: 50%;
+        margin: auto 0;
+        text-align: center;
+        /* margin-top: 10%; */
+    }
+    
+    .name-2{
+        display: flex;
+        margin-top: 10%;
+        margin: 0 auto;
+        width: 60%;
+        text-align: center;
+        font-size: 2.5em;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    
+    .lolli-container{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lolli-img{
+        width: 25%;
+    }
+    
+    .about-moc{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        padding: 5% 10%;
+        font-size: 0.9em;
+        font-family: 'Poppins';
+        font-weight: 500;
+        color:var(--foreground);
+        line-height: 1.5;
+    }
+
+    .content-section-2b-container{
+        justify-content: center;
+        background: var(--vercel-bg);
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+    }
+    
+    .vercel-container{
+        max-width: 50%;
+        
+    }
+    
+    .vercel{
+        margin-top: 2%;
+        max-width: 100%;
+        padding: 1%;
+    }
+
+    .front-end-container{
+        width: 50%;
+    }
+
+
+
+    .programming-container{
+        width: 50%;
+    }
+
+    .code-svg{
+        height: 0.65em;
+    }
+    .browser-svg{
+        height: 0.65em;
+    }
+    .designing-things-container{
+        font-size: 0.65em;
+    }
+    .designing-things{
+        font-size: 0.65em;
+    }
+
+    .name-2b{
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    .about-designer{
+        font-size: 0.65em;
+    }
+
+    .about-programming{
+        font-size: 0.65em;
+    }
+
+    .s{
+        height: 2em;
+    }
+
+    .footer-content{
+        font-size: 1em;
+    }
+}
+
+@media(min-width: 968px) and (max-width: 1200px){
+
+    .developer{
+        display: none;
+    }
+
+    .name{
+        justify-content: center;
+        font-size: 5.5em;
+    }
+
+    .name:nth-of-type(2){
+        margin-left: 5%;
+    }
+
+    .header-container{
+        margin-left: 0;
+        margin-top: 18%;
+    }
+
+    .short-para-about-me{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .brief-container{
+        justify-content: center;
+        margin-top: 6%;
+        margin-left: 0;
+    }
+
+    .brief{
+        width: 60%;
+    }
+
+    .social-icons-container{
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 7%;
+    }
+
+    .social-icons-sub-container{
+        margin-right: 8%;
+    }
+
+    .social-icons-sub-container:nth-of-type(4){
+        margin-right: 0;
+    }
+
+    .social-icons{
+        height: 1.75em;
+    }
+
+    .active{
+        font-size: 1em;
+    }
+
+    .theme-switch{
+        height: 1.75em;
+    }
+
+    .navbar{
+        margin-top: 3%;
+    }
+
+        .header-section-2{
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-section-2-container{
+        justify-content: space-between;
+        margin: 20% 5% 0 5%;
+    }
+    
+    .img-container{
+        display: flex;
+    }
+    
+    .moc-container{
+        max-width: 50%;
+        display: flex;
+    }
+
+    .moc{
+        /* margin-top: 5%; */
+        max-width: 100%;
+        padding: 1%;
+    }
+    
+    .h2-container{
+        width: 50%;
+        margin: auto 0;
+        text-align: center;
+        /* margin-top: 10%; */
+    }
+    
+    .name-2{
+        display: flex;
+        margin-top: 10%;
+        margin: 0 auto;
+        width: 60%;
+        text-align: center;
+        font-size: 2.5em;
+        font-family: Acorn, 'Kaushan Script';
+        font-weight: bolder;
+        color:var(--foreground);
+    }
+    
+    .lolli-container{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lolli-img{
+        width: 25%;
+    }
+    
+    .about-moc{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        padding: 5% 10%;
+        font-size: 0.9em;
+        font-family: 'Poppins';
+        font-weight: 500;
+        color:var(--foreground);
+        line-height: 1.5;
+    }
+    .content-section-2b-container{
+        justify-content: center;
+        background: var(--vercel-bg);
+        margin: 20% 5% 0 5%;
+        padding: 5% 3%;
+    }
+    
+    .vercel-container{
+        max-width: 50%;
+    }
+    
+    .vercel{
+        margin-top: 2%;
+        max-width: 100%;
+        padding: 1%;
+    }
+}
+
+    
+
+
